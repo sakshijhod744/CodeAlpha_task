@@ -1,49 +1,78 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Creative Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Image Gallery</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="calculator">
+<nav class="navbar">
+<h2>MyGallery</h2>
 
-<div class="top">
-<h2>Calculator</h2>
-<button onclick="toggleMode()">🌙</button>
+<input type="text" id="search" placeholder="Search category...">
+
+<button id="toggleMode">🌙</button>
+</nav>
+
+<header>
+<h1>Creative Image Gallery</h1>
+<p>Modern responsive image gallery</p>
+</header>
+
+<div class="filters">
+<button onclick="filterImages('all')">All</button>
+<button onclick="filterImages('nature')">Nature</button>
+<button onclick="filterImages('city')">City</button>
+<button onclick="filterImages('animals')">Animals</button>
 </div>
 
-<input type="text" id="display" placeholder="0">
+<div class="gallery">
 
-<div class="buttons">
+<div class="image nature">
+<img loading="lazy" src="https://picsum.photos/400/500?1">
+</div>
 
-<button onclick="clearDisplay()">C</button>
-<button onclick="deleteLast()">DEL</button>
-<button onclick="appendValue('%')">%</button>
-<button onclick="appendValue('/')">÷</button>
+<div class="image city">
+<img loading="lazy" src="https://picsum.photos/400/300?2">
+</div>
 
-<button onclick="appendValue('7')">7</button>
-<button onclick="appendValue('8')">8</button>
-<button onclick="appendValue('9')">9</button>
-<button onclick="appendValue('*')">×</button>
+<div class="image animals">
+<img loading="lazy" src="https://picsum.photos/400/600?3">
+</div>
 
-<button onclick="appendValue('4')">4</button>
-<button onclick="appendValue('5')">5</button>
-<button onclick="appendValue('6')">6</button>
-<button onclick="appendValue('-')">−</button>
+<div class="image nature">
+<img loading="lazy" src="https://picsum.photos/400/350?4">
+</div>
 
-<button onclick="appendValue('1')">1</button>
-<button onclick="appendValue('2')">2</button>
-<button onclick="appendValue('3')">3</button>
-<button onclick="appendValue('+')">+</button>
+<div class="image city">
+<img loading="lazy" src="https://picsum.photos/400/450?5">
+</div>
 
-<button class="zero" onclick="appendValue('0')">0</button>
-<button onclick="appendValue('.')">.</button>
-<button class="equal" onclick="calculate()">=</button>
+<div class="image animals">
+<img loading="lazy" src="https://picsum.photos/400/400?6">
+</div>
 
 </div>
+
+<!-- Lightbox -->
+
+<div class="lightbox" id="lightbox">
+
+<span class="close">&times;</span>
+
+<button class="prev">&#10094;</button>
+
+<img id="lightbox-img">
+
+<a id="download" download>
+<button class="download">Download</button>
+</a>
+
+<button class="next">&#10095;</button>
 
 </div>
 

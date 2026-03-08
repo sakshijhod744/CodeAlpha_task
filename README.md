@@ -1,54 +1,35 @@
-# Creative Calculator Web App
+# Creative Image Gallery
 
-A modern and responsive calculator built using **HTML, CSS, and JavaScript**.  
-This calculator performs basic arithmetic operations and includes keyboard support, animations, and a clean user interface.
+This is a responsive and interactive Image Gallery website built using **HTML, CSS, and JavaScript**.
 
----
+## Features
 
-## 🚀 Features
+- Responsive layout
+- Image category filter
+- Image search functionality
+- Hover zoom effects
+- Lightbox image preview
+- Next / Previous navigation
+- Dark mode toggle
+- Image download button
+- Lazy loading images
 
-- Basic arithmetic operations (+, −, ×, ÷)
-- Responsive user interface
-- Keyboard input support
-- Clear and delete functionality
-- Animated buttons and hover effects
-- Dark / Light mode toggle
-- Modern UI design
+## Technologies Used
 
----
-
-## 🛠 Technologies Used
-
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript
 
----
+## Project Purpose
 
-## 📂 Project Structure
+This project was developed as part of a **Frontend Development Internship Task** to demonstrate UI design, responsive layouts, and JavaScript functionality.
 
-creative-calculator
-│
-├── index.html
-├── style.css
-└── script.js
+## How to Run
 
----
+1. Download the project files.
+2. Open `index.html` in your browser.
+3. Explore the gallery features.
 
-## ▶️ How to Run the Project
+## Author
 
-1. Download or clone the repository
-2. Open the project folder
-3. Run the **index.html** file in your browser
-
----
-
-## 📸 Screenshot
-
-Add a screenshot of your calculator UI here.
-
----
-
-## 📌 Author
-
-Developed by **Sakshi**
+Sakshi Jhod

@@ -1,58 +1,119 @@
-let display = document.getElementById("display");
+let images = document.querySelectorAll(".gallery img")
+let lightbox = document.getElementById("lightbox")
+let lightboxImg = document.getElementById("lightbox-img")
+let download = document.getElementById("download")
 
-function appendValue(value){
-display.value += value;
+let current = 0
+
+images.forEach((img,index)=>{
+
+img.addEventListener("click",()=>{
+
+lightbox.style.display="flex"
+
+lightboxImg.src = img.src
+
+download.href = img.src
+
+current = index
+
+})
+
+})
+
+document.querySelector(".close").onclick=()=>{
+
+lightbox.style.display="none"
+
 }
 
-function clearDisplay(){
-display.value="";
+document.querySelector(".next").onclick=()=>{
+
+current++
+
+if(current>=images.length){
+current=0
 }
 
-function deleteLast(){
-display.value = display.value.slice(0,-1);
+lightboxImg.src = images[current].src
+download.href = images[current].src
+
 }
 
-function calculate(){
-try{
-display.value = eval(display.value);
-}
-catch{
-display.value="Error";
-}
-}
+document.querySelector(".prev").onclick=()=>{
 
-/* Dark Mode Toggle */
+current--
 
-function toggleMode(){
-document.body.classList.toggle("dark");
+if(current<0){
+current=images.length-1
 }
 
-/* Keyboard Support */
+lightboxImg.src = images[current].src
+download.href = images[current].src
 
-document.addEventListener("keydown",function(e){
-
-if(!isNaN(e.key)){
-display.value += e.key;
 }
 
-if(e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/"){
-display.value += e.key;
+
+/* filter */
+
+function filterImages(category){
+
+let items=document.querySelectorAll(".image")
+
+items.forEach(item=>{
+
+if(category==="all"){
+
+item.style.display="block"
+
 }
 
-if(e.key === "Enter"){
-calculate();
+else if(item.classList.contains(category)){
+
+item.style.display="block"
+
 }
 
-if(e.key === "Backspace"){
-deleteLast();
+else{
+
+item.style.display="none"
+
 }
 
-if(e.key === "Escape"){
-clearDisplay();
+})
+
 }
 
-if(e.key === "."){
-display.value += ".";
+
+/* search */
+
+document.getElementById("search").addEventListener("keyup",function(){
+
+let value=this.value.toLowerCase()
+
+document.querySelectorAll(".image").forEach(img=>{
+
+if(img.className.includes(value)){
+
+img.style.display="block"
+
 }
 
-});
+else{
+
+img.style.display="none"
+
+}
+
+})
+
+})
+
+
+/* dark mode */
+
+document.getElementById("toggleMode").onclick=()=>{
+
+document.body.classList.toggle("dark")
+
+}
