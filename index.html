@@ -1,82 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creative Image Gallery</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Music Player</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Using FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-<nav class="navbar">
-<h2>MyGallery</h2>
+    <!-- Background Image Container -->
+    <div class="background-image" id="bg-image"></div>
 
-<input type="text" id="search" placeholder="Search category...">
+    <div class="music-container" id="music-container">
+        <div class="img-container">
+            <img src="https://via.placeholder.com/300" alt="music-cover" id="cover">
+        </div>
 
-<button id="toggleMode">🌙</button>
-</nav>
+        <div class="info">
+            <h2 id="title">Song Title</h2>
+            <p id="artist">Artist Name</p>
+        </div>
 
-<header>
-<h1>Creative Image Gallery</h1>
-<p>Modern responsive image gallery</p>
-</header>
+        <audio id="audio" src=""></audio>
 
-<div class="filters">
-<button onclick="filterImages('all')">All</button>
-<button onclick="filterImages('nature')">Nature</button>
-<button onclick="filterImages('city')">City</button>
-<button onclick="filterImages('animals')">Animals</button>
-</div>
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+        </div>
 
-<div class="gallery">
+        <div class="navigation">
+            <button id="prev" class="action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+    </div>
 
-<div class="image nature">
-<img loading="lazy" src="https://picsum.photos/400/500?1">
-</div>
-
-<div class="image city">
-<img loading="lazy" src="https://picsum.photos/400/300?2">
-</div>
-
-<div class="image animals">
-<img loading="lazy" src="https://picsum.photos/400/600?3">
-</div>
-
-<div class="image nature">
-<img loading="lazy" src="https://picsum.photos/400/350?4">
-</div>
-
-<div class="image city">
-<img loading="lazy" src="https://picsum.photos/400/450?5">
-</div>
-
-<div class="image animals">
-<img loading="lazy" src="https://picsum.photos/400/400?6">
-</div>
-
-</div>
-
-<!-- Lightbox -->
-
-<div class="lightbox" id="lightbox">
-
-<span class="close">&times;</span>
-
-<button class="prev">&#10094;</button>
-
-<img id="lightbox-img">
-
-<a id="download" download>
-<button class="download">Download</button>
-</a>
-
-<button class="next">&#10095;</button>
-
-</div>
-
-<script src="script.js"></script>
-
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

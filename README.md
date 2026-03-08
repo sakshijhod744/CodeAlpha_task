@@ -1,35 +1,55 @@
-# Creative Image Gallery
+# 🎧 Ultimate Music Player
 
-This is a responsive and interactive Image Gallery website built using **HTML, CSS, and JavaScript**.
+A modern and interactive **Music Player built using HTML, CSS, and JavaScript**.  
+This project allows users to play songs online, control volume, search songs, and view artist images with a beautiful full-screen UI.
 
-## Features
+---
 
-- Responsive layout
-- Image category filter
-- Image search functionality
-- Hover zoom effects
-- Lightbox image preview
-- Next / Previous navigation
-- Dark mode toggle
-- Image download button
-- Lazy loading images
+## 🚀 Features
 
-## Technologies Used
+- ▶ Play / Pause music
+- ⏭ Next & Previous song
+- 🔊 Volume control
+- 📊 Progress bar
+- 🔍 Song search feature
+- 🖼 Artist image display
+- 🎵 Online song streaming
+- 💻 Full-screen responsive design
 
-- HTML
-- CSS
+---
+
+## 🛠 Technologies Used
+
+- HTML5
+- CSS3
 - JavaScript
 
-## Project Purpose
+---
 
-This project was developed as part of a **Frontend Development Internship Task** to demonstrate UI design, responsive layouts, and JavaScript functionality.
+## 📷 Project Screenshot
 
-## How to Run
 
-1. Download the project files.
-2. Open `index.html` in your browser.
-3. Explore the gallery features.
+![alt text](<Screenshot 2026-03-08 144008.png>)
 
-## Author
+---
 
-Sakshi Jhod
+## ▶ How to Run the Project
+
+1. Download or clone the repository
+2. Open the project folder
+3. Run **index.html** in your browser
+
+---
+
+## 🌟 Future Improvements
+
+- Add dark/light mode
+- Add lyrics feature
+- Add playlist support
+- Connect with music APIs
+
+---
+
+## 📌 Author
+
+Developed by **Sakshi** as part of a **Frontend Development Internship Project**.

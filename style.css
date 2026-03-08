@@ -1,147 +1,148 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-body{
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#f4f4f4;
-transition:0.3s;
+/* --- CSS STYLES --- */
+:root {
+    --primary-color: #ff4b4b;
+    --secondary-color: #ff9a9a;
+    --bg-color: #f0f2f5;
+    --player-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #333;
 }
 
-.dark{
-background:#111;
-color:white;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* navbar */
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-background:#222;
-color:white;
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-.navbar input{
-padding:8px;
-border:none;
-border-radius:5px;
+/* Full Screen Background Image */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: background-image 0.5s ease-in-out;
 }
 
-header{
-text-align:center;
-padding:30px;
+/* Glassmorphism Player Container */
+.music-container {
+    background-color: var(--player-bg);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    padding: 30px;
+    position: relative;
+    width: 400px;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* filters */
-
-.filters{
-text-align:center;
-margin-bottom:20px;
+.img-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    border: 5px solid white;
 }
 
-.filters button{
-padding:10px 20px;
-margin:5px;
-border:none;
-background:#333;
-color:white;
-cursor:pointer;
-border-radius:20px;
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: rotate 10s linear infinite;
+    animation-play-state: paused;
 }
 
-/* gallery */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-padding:20px;
+/* Animation class added via JS when playing */
+.music-container.play .img-container img {
+    animation-play-state: running;
 }
 
-.image{
-overflow:hidden;
-border-radius:10px;
-cursor:pointer;
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-.image img{
-width:100%;
-transition:0.4s;
+.info {
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-.image:hover img{
-transform:scale(1.1);
-filter:brightness(80%);
+.info h2 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--text-color);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-/* lightbox */
-
-.lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-flex-direction:column;
+.info p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #666;
 }
 
-.lightbox img{
-max-width:80%;
-max-height:70%;
-margin-bottom:20px;
+.progress-container {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px 0;
+    height: 8px;
+    width: 100%;
 }
 
-.close{
-position:absolute;
-top:20px;
-right:40px;
-font-size:40px;
-color:white;
-cursor:pointer;
+.progress {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
 }
 
-.prev,.next{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-font-size:40px;
-background:none;
-border:none;
-color:white;
-cursor:pointer;
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 
-.prev{left:30px;}
-.next{right:30px;}
-
-.download{
-padding:10px 20px;
-border:none;
-background:#ff9800;
-color:white;
-cursor:pointer;
-border-radius:5px;
+.action-btn {
+    background-color: transparent;
+    border: 0;
+    color: #999;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+    transition: color 0.2s, transform 0.2s;
 }
 
-/* responsive */
-
-@media(max-width:600px){
-
-.navbar{
-flex-direction:column;
-gap:10px;
+.action-btn:hover {
+    color: var(--primary-color);
 }
 
+.action-btn-big {
+    color: var(--text-color);
+    font-size: 35px;
+}
+
+.action-btn-big:hover {
+    transform: scale(1.1);
+    color: var(--primary-color);
 }
